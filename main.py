@@ -40,9 +40,19 @@ def play_game():
     attempts = 0
 
 # Loop for user guesses 
+    while attempts < max_attempts:
+        guess = get_valid_integer("Enter your guess: ")
+        attempts += 1
 
 
 # Check if guess is too low or too high
+        if guess < random_number:
+            print("Too low!")
+        elif guess > random_number:
+            print("Too high!")
+        else:
+            print(f"Congratulations! You guessed the number {random_number} correctly in {attempts} attempts.") 
+            return  # Exit the function if the guess is correct
 
 # Display success message if guessed correctly
 
