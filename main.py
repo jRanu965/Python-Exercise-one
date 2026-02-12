@@ -28,15 +28,19 @@ def play_game():
     while low_number >= high_number:
         print("The lowest number must be lower than the highest number.")
         low_number = get_valid_integer(" Please enter the lowest number in the range: ")
-        high_number = get_valid_integer("Please enter the highest number in the range: ") 
+        high_number = get_valid_integer("Please enter the highest number in the range: ")  
 
 # Ask for number of attempts
+    max_attempts = get_valid_integer("Enter the number of attempts you want to have: ") 
 
 # Generate random number
-
+    random_number = random.randint(low_number, high_number) 
+ 
 # Track number of attempts
+    attempts = 0
 
-# Loop for user guesses
+# Loop for user guesses 
+
 
 # Check if guess is too low or too high
 
