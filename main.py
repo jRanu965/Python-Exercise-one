@@ -1,5 +1,6 @@
 # Import random module to generate a random number
 import random
+from unicodedata import name
 
 # Function to get a valid integer input with error handling
 def get_valid_integer(prompt): 
@@ -61,16 +62,23 @@ print(f"you've used all {max_attempts} attempts. The correct number was {random_
 def main():
     print("Welcome to the Number Guessing Game!")
     name = input("Please enter your name: ") 
+    print(f"Hello, {name}! Let's start the game.") 
     
     while True:
         play_game()
+        # Ask if they want to play again, only accepting 'yes' or 'no'
         play_again = get_yes_no("Do you want to play again? (yes/no): ")
         if play_again == 'no':
             print("Thank you for playing!") 
             break
 
 # Ask for user's name and greet them
+print(f"Hello, {name}! Let's start the game.") 
 
 # Ask if they want to play again, only accepting 'yes' or 'no'
 
+    
+
 # Run the game
+if __name__ == "__main__":
+    main()
