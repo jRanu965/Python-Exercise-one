@@ -54,11 +54,20 @@ def play_game():
             print(f"Congratulations! You guessed the number {random_number} correctly in {attempts} attempts.") 
             return  # Exit the function if the guess is correct
 
-# Display success message if guessed correctly
-
 # If max attempts are used up, reveal the correct number
+print(f"you've used all {max_attempts} attempts. The correct number was {random_number}.") 
 
 # Main game loop
+def main():
+    print("Welcome to the Number Guessing Game!")
+    name = input("Please enter your name: ") 
+    
+    while True:
+        play_game()
+        play_again = get_yes_no("Do you want to play again? (yes/no): ")
+        if play_again == 'no':
+            print("Thank you for playing!") 
+            break
 
 # Ask for user's name and greet them
 
