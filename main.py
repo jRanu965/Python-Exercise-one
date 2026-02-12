@@ -1,6 +1,5 @@
 # Import random module to generate a random number
 import random
-from unicodedata import name
 
 # Function to get a valid integer input with error handling
 def get_valid_integer(prompt): 
@@ -22,8 +21,7 @@ def get_yes_no(prompt):
 
 # Function to play one round of the game
 def play_game():
-
-# Ask for number range 
+    # Ask for number range 
     low_number = get_valid_integer("Enter the lowest number of your choice in the range: ")
     high_number = get_valid_integer("Enter the highest number of your choice in the range: ")
     while low_number >= high_number:
@@ -31,22 +29,21 @@ def play_game():
         low_number = get_valid_integer(" Please enter the lowest number in the range: ")
         high_number = get_valid_integer("Please enter the highest number in the range: ")  
 
-# Ask for number of attempts
+    # Ask for number of attempts
     max_attempts = get_valid_integer("Enter the number of attempts you want to have: ") 
 
-# Generate random number
+    # Generate random number
     random_number = random.randint(low_number, high_number) 
  
-# Track number of attempts
+    # Track number of attempts
     attempts = 0
 
-# Loop for user guesses 
+    # Loop for user guesses 
     while attempts < max_attempts:
         guess = get_valid_integer("Enter your guess: ")
         attempts += 1
 
-
-# Check if guess is too low or too high
+        # Check if guess is too low or too high
         if guess < random_number:
             print("Too low!")
         elif guess > random_number:
@@ -55,8 +52,8 @@ def play_game():
             print(f"Congratulations! You guessed the number {random_number} correctly in {attempts} attempts.") 
             return  # Exit the function if the guess is correct
 
-# If max attempts are used up, reveal the correct number
-print(f"you've used all {max_attempts} attempts. The correct number was {random_number}.") 
+    # If max attempts are used up, reveal the correct number
+    print(f"you've used all {max_attempts} attempts. The correct number was {random_number}.") 
 
 # Main game loop
 def main():
@@ -72,13 +69,6 @@ def main():
             print("Thank you for playing!") 
             break
 
-# Ask for user's name and greet them
-print(f"Hello, {name}! Let's start the game.") 
-
-# Ask if they want to play again, only accepting 'yes' or 'no'
-
-    
-
 # Run the game
 if __name__ == "__main__":
-    main()
+    main() 
