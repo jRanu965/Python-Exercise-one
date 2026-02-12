@@ -10,13 +10,25 @@ def get_valid_integer(prompt):
         except ValueError:
             print("Invalid input. Please enter an integer.")
 
-# Function to get a valid 'y' or 'n' response from the user
+# Function to get a valid 'yes' or 'no' response from the user
+def get_yes_no(prompt):
+    while True:
+        response = input(prompt).lower()
+        if response in ['yes', 'no']:
+            return response
+        else:
+            print("Not correct!. Please enter 'yes' for yes to play again or 'no' for no not to play again.")
 
 # Function to play one round of the game
+def play_game():
 
-# Ask for number range
-
-# Ensure low_number is less than high_number
+# Ask for number range 
+    low_number = get_valid_integer("Enter the lowest number of your choice in the range: ")
+    high_number = get_valid_integer("Enter the highest number of your choice in the range: ")
+    while low_number >= high_number:
+        print("The lowest number must be lower than the highest number.")
+        low_number = get_valid_integer(" Please enter the lowest number in the range: ")
+        high_number = get_valid_integer("Please enter the highest number in the range: ") 
 
 # Ask for number of attempts
 
@@ -36,6 +48,6 @@ def get_valid_integer(prompt):
 
 # Ask for user's name and greet them
 
-# Ask if they want to play again, only accepting 'y' or 'n'
+# Ask if they want to play again, only accepting 'yes' or 'no'
 
 # Run the game
