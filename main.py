@@ -29,8 +29,12 @@ def play_game():
         low_number = get_valid_integer(" Please enter the lowest number in the range: ")
         high_number = get_valid_integer("Please enter the highest number in the range: ")  
 
-    # Ask for number of attempts
-    max_attempts = get_valid_integer("Enter the number of attempts you want to have: ") 
+    # Ask for number of attempts (must be at least 1)
+    while True:
+        max_attempts = get_valid_integer("Enter the number of attempts you want to have (must be at least 1): ")
+        if max_attempts >= 1:
+            break
+        print("Number of attempts must be at least 1. Please enter a positive integer.")
 
     # Generate random number
     random_number = random.randint(low_number, high_number) 
@@ -42,7 +46,7 @@ def play_game():
     while attempts < max_attempts:
         guess = get_valid_integer("Enter your guess: ")
         attempts += 1
-
+    
         # Check if guess is too low or too high
         if guess < random_number:
             print("Too low!")
