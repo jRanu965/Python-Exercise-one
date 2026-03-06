@@ -4,8 +4,9 @@ import random
 # Function to get a valid integer input with error handling
 def get_valid_integer(prompt): 
     while True:
-        try:
+        try: 
             value = int(input(prompt))
+  
             return value
         except ValueError:
             print("Invalid input. Please enter an integer.")
@@ -19,7 +20,7 @@ def get_yes_no(prompt):
         else:
             print("Not correct!. Please enter 'yes' for yes to play again or 'no' for no not to play again.")
 
-# Function to play one round of the game
+# Function to play one round of the game 
 def play_game():
     # Ask for number range 
     low_number = get_valid_integer("Enter the lowest number of your choice in the range: ")
@@ -29,12 +30,11 @@ def play_game():
         low_number = get_valid_integer(" Please enter the lowest number in the range: ")
         high_number = get_valid_integer("Please enter the highest number in the range: ")  
 
-    # Ask for number of attempts (must be at least 1)
-    while True:
-        max_attempts = get_valid_integer("Enter the number of attempts you want to have (must be at least 1): ")
+    # Ask for number of attempts 
+    while True: 
+        max_attempts = get_valid_integer("Enter the number of attempts you want to have: ")
         if max_attempts >= 1:
-            break
-        print("Number of attempts must be at least 1. Please enter a positive integer.")
+            break 
 
     # Generate random number
     random_number = random.randint(low_number, high_number) 
@@ -45,7 +45,7 @@ def play_game():
     # Loop for user guesses 
     while attempts < max_attempts:
         guess = get_valid_integer("Enter your guess: ")
-        attempts += 1
+        attempts += 1 
     
         # Check if guess is too low or too high
         if guess < random_number:
@@ -71,7 +71,7 @@ def main():
         play_again = get_yes_no("Do you want to play again? (yes/no): ")
         if play_again == 'no':
             print("Thank you for playing!") 
-            break
+            break 
 
 # Run the game
 if __name__ == "__main__":
